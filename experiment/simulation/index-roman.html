@@ -11,31 +11,33 @@
   <body>
     <div class="tabs">
       <ul>
-        <li class="is-active"><a>Unary Numbers</a></li>
+        <li><a href="./index.html">Unary Numbers</a></li>
         <li><a href="./index-binary.html">Binary Numbers</a></li>
-        <li><a href="./index-roman.html">Roman Numbers</a></li>
+        <li class="is-active"><a>Roman Numbers</a></li>
       </ul>
     </div>
-    <h2 style="text-align: center">Unary Numbers</h2>
+    <h2 style="text-align: center">Roman Numbers</h2>
     <div>
       <div id="input1" class="input-container">
         <input
           type="text"
           id="in1"
           class="input-field"
-          onkeyup="this.value = this.value.replace(/[^1]/, '')"
+          onkeyup="this.value = this.value.replace(/[^IVXLCDM]/, '')"
+          oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);"
         />
         <input
           type="text"
           id="in2"
           class="input-field"
-          onkeyup="this.value = this.value.replace(/[^1]/, '')"
+          onkeyup="this.value = this.value.replace(/[^IVXLCDM]/, '')"
+          oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);"
         />
       </div>
       <button id="add-button">Add</button>
       <button id="mul-button">Multiply</button>
     </div>
     <div id="answer-container"></div>
-    <script src="./js/unary.js"></script>
+    <script src="./js/roman.js"></script>
   </body>
 </html>

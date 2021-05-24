@@ -11,31 +11,31 @@
   <body>
     <div class="tabs">
       <ul>
-        <li class="is-active"><a>Unary Numbers</a></li>
-        <li><a href="./index-binary.html">Binary Numbers</a></li>
+        <li><a href="./index.html">Unary Numbers</a></li>
+        <li class="is-active"><a>Binary Numbers</a></li>
         <li><a href="./index-roman.html">Roman Numbers</a></li>
       </ul>
     </div>
-    <h2 style="text-align: center">Unary Numbers</h2>
+    <h2 style="text-align: center">Binary Numbers</h2>
     <div>
       <div id="input1" class="input-container">
         <input
           type="text"
           id="in1"
           class="input-field"
-          onkeyup="this.value = this.value.replace(/[^1]/, '')"
+          onkeyup="this.value = this.value.replace(/[^01]/, '')"
         />
         <input
           type="text"
           id="in2"
           class="input-field"
-          onkeyup="this.value = this.value.replace(/[^1]/, '')"
+          onkeyup="this.value = this.value.replace(/[^01]/, '')"
         />
       </div>
       <button id="add-button">Add</button>
       <button id="mul-button">Multiply</button>
     </div>
     <div id="answer-container"></div>
-    <script src="./js/unary.js"></script>
+    <script src="./js/binary.js"></script>
   </body>
 </html>
