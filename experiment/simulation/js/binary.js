@@ -55,6 +55,8 @@ const populate_answer_container = (length) => {
 };
 
 const answer_question = async (length) => {
+  const remainderContainer = document.getElementById("rem-container");
+  const operationContainer = document.getElementById("op-container");
   let remainder = 0;
   for (let i = length; i > 0; i--) {
     let v1Div = document.getElementById("v1" + i.toString());
@@ -62,28 +64,37 @@ const answer_question = async (length) => {
     let aDiv = document.getElementById("a" + i.toString());
     let v1 = parseInt(v1Div.innerHTML);
     let v2 = parseInt(v2Div.innerHTML);
-    v1Div.style.backgroundColor = "green";
-    v2Div.style.backgroundColor = "green";
+    v1Div.style.backgroundColor = "#BDE4A8";
+    operationContainer.innerHTML =
+      "Operation: " + remainder.toString() + "+" + v1.toString();
+    await sleep(0.5);
+    v1Div.style.backgroundColor = "transparent";
+    v2Div.style.backgroundColor = "#BDE4A8";
+    operationContainer.innerHTML += "+" + v2.toString();
     await sleep(0.5);
     let tSum = v1 + v2 + remainder;
     aDiv.innerHTML = tSum > 1 ? (tSum === 3 ? 1 : 0) : tSum;
     remainder = tSum > 1 ? 1 : 0;
+    v2Div.style.backgroundColor = "transparent";
+    aDiv.style.backgroundColor = "#BDE4A8";
+    operationContainer.innerHTML +=
+      "=" + (tSum > 1 ? (tSum === 3 ? 1 : 0) : tSum).toString();
+    remainderContainer.innerHTML = "Remainder: " + remainder.toString();
     console.log(remainder);
     await sleep(1);
-    v1Div.style.backgroundColor = "transparent";
-    v2Div.style.backgroundColor = "transparent";
+    aDiv.style.backgroundColor = "transparent";
   }
 };
 
 mulButton.addEventListener("click", async () => {
-  document.getElementById("v11").style.backgroundColor = "green";
+  document.getElementById("v11").style.backgroundColor = "#BDE4A8";
 });
 
 addButton.addEventListener("click", async () => {
   clear_answer_container();
   let val1 = document.getElementById("in1").value;
   let val2 = document.getElementById("in2").value;
-  ans.style.display = "block";
+  ans.style.display = "flex";
   const length = val1.length > val2.length ? val1.length + 1 : val2.length + 1;
   populate_questions(val1, val2, length);
   populate_answer_container(length);

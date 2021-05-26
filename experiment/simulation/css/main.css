@@ -16,9 +16,9 @@
 .custom-box {
   display: flex;
   flex-direction: column;
-  border: thick solid grey;
+  /* border: 1px solid #f7717d; */
   width: 80%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
 }
 
@@ -34,12 +34,28 @@
 
 .custom-cell {
   flex: 1;
-  border: 1px solid grey;
+  border: 1px solid #f7717d;
   /* padding: 10px 20px; */
   font-size: 25px;
   text-align: center;
 }
 
 .answer {
-  border-top: thick solid black;
+  border-top: 2px solid #f7717d;
+}
+
+.result-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #f7717d;
+  color: #fff;
+  font-size: 18px;
+  /* font-weight: bolder; */
+}
+
+#answer-container {
+  align-items: stretch;
 }
