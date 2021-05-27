@@ -48,7 +48,7 @@ const populate_answer_container = (length) => {
   for (let i = 0; i < length; i++) {
     let tempDiv = document.createElement("div");
     tempDiv.classList.add("custom-cell");
-    tempDiv.id = "a" + (length - i).toString();
+    tempDiv.id = "ans" + (length - i).toString();
     tempDiv.innerHTML = ".";
     parent.prepend(tempDiv);
   }
@@ -61,7 +61,7 @@ const answer_question = async (length) => {
   for (let i = length; i > 0; i--) {
     let v1Div = document.getElementById("v1" + i.toString());
     let v2Div = document.getElementById("v2" + i.toString());
-    let aDiv = document.getElementById("a" + i.toString());
+    let aDiv = document.getElementById("ans" + i.toString());
     let v1 = parseInt(v1Div.innerHTML);
     let v2 = parseInt(v2Div.innerHTML);
     v1Div.style.backgroundColor = "#BDE4A8";
